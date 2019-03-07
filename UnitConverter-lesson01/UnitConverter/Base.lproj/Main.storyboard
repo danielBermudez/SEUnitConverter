@@ -28,6 +28,7 @@
                                 </constraints>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="xoB-Yb-fjP"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="rAq-mS-iVd"/>
                                 </connections>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oae-Ta-DQm">
