@@ -9,8 +9,8 @@ import UIKit
 
 class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
-    private var temperatureValues = (-100 ... 100).map{$0}
-    
+    private var temperatureRange = (-100 ... 100)
+    private var  temperatureValues = [Int]()
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -30,6 +30,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
   
     override func viewDidLoad() {
         super.viewDidLoad()
+       temperatureValues =  temperatureRange.map{(value) -> Int in return value}
         // Do any additional setup after loading the view, typically from a nib.
         
     }
