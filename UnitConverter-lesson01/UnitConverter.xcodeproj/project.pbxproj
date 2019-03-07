@@ -61,7 +61,6 @@
 		F96E6C8A1B0698880088267A = {
 			isa = PBXGroup;
 			children = (
-				AA1283A42231C44A00EAE560 /* UnitConverter.swift */,
 				F96E6C951B0698880088267A /* UnitConverter */,
 				F96E6CAB1B0698880088267A /* UnitConverterTests */,
 				F96E6C941B0698880088267A /* Products */,
@@ -80,6 +79,7 @@
 		F96E6C951B0698880088267A /* UnitConverter */ = {
 			isa = PBXGroup;
 			children = (
+				AA1283A42231C44A00EAE560 /* UnitConverter.swift */,
 				F96E6C981B0698880088267A /* AppDelegate.swift */,
 				F96E6C9A1B0698880088267A /* ViewController.swift */,
 				F96E6C9C1B0698880088267A /* Main.storyboard */,

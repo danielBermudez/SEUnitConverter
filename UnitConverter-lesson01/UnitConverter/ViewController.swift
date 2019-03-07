@@ -28,9 +28,11 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         // convert and display temperature
-        let degreeCelsius = temperatureValues[row]
+        // the code is less readable and confusing in one only line.
         
-        temperatureLabel.text = "\(converter.degreesFarenheit(degreesCelsius: degreeCelsius))°F"
+       // temperatureLabel.text = "\(converter.degreesFarenheit(degreesCelsius: temperatureValues[row]))°F"
+        converter.degreesCelsisus = temperatureValues[row]
+        temperatureLabel.text = "\(converter.degreesFarenheit!)°F"
     }
   
     override func viewDidLoad() {
