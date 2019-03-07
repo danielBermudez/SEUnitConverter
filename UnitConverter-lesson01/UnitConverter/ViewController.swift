@@ -8,6 +8,7 @@ This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAl
 import UIKit
 
 class ViewController: UIViewController, UIPickerViewDataSource {
+    @IBOutlet weak var pickerView: UIPickerView!
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 10
     }
@@ -20,6 +21,7 @@ class ViewController: UIViewController, UIPickerViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        pickerView.dataSource = self
     }
 
     override func didReceiveMemoryWarning() {
