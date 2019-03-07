@@ -27,9 +27,16 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         // convert and display temperature
-        let degreeCelsius = Float(temperatureValues[row])
-            let degreesFarhenheit = 1.8 * degreeCelsius + 32.0
-        temperatureLabel.text = "\(Int(degreesFarhenheit))°F"
+        
+       // the original code was more readable than one single complete statement.
+        updateLabel(degree:transformtoFahrenheit(degree: Float(temperatureValues[row])))
+    }
+    func transformtoFahrenheit(degree : Float)-> Int{
+        let degreesFarhenheit = 1.8 * degree + 32.0
+        return Int(degreesFarhenheit)
+    }
+    func updateLabel(degree : Int){
+        temperatureLabel.text = "\(degree)°F"
     }
   
     override func viewDidLoad() {
