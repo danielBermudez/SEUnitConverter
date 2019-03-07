@@ -30,7 +30,9 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
   
     override func viewDidLoad() {
         super.viewDidLoad()
-       temperatureValues =  temperatureRange.map{(value) -> Int in return value}
+        
+     temperatureValues  = temperatureRange.map{(value) -> Int in return value}
+        
         // Do any additional setup after loading the view, typically from a nib.
         
     }
