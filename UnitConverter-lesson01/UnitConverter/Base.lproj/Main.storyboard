@@ -27,7 +27,6 @@
                                     <constraint firstAttribute="height" constant="162" id="7dz-to-LRt"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="xoB-Yb-fjP"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="rAq-mS-iVd"/>
                                 </connections>
                             </pickerView>
@@ -54,6 +53,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <customObject id="uPj-u0-XhN" userLabel="TemperatureRange"/>
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="30.134932533733135"/>
         </scene>
