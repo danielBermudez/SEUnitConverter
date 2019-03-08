@@ -12,6 +12,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBOutlet weak var temperatureLabel: UILabel!
     private var temperatureValues = (-100 ... 100).map{$0}
     private let converter = UnitConverter()
+    private let dataSource = TemperatureRange()
+    @IBOutlet weak var picker: UIPickerView!
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -36,7 +38,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+        picker.dataSource = dataSource as! UIPickerViewDataSource
     }
 
     override func didReceiveMemoryWarning() {
