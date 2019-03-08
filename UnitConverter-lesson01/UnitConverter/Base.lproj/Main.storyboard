@@ -51,12 +51,13 @@
                     </view>
                     <connections>
                         <outlet property="temperatureLabel" destination="Oae-Ta-DQm" id="cPy-gS-zIj"/>
+                        <outlet property="temperatureRange" destination="uPj-u0-XhN" id="maN-fx-m0H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <customObject id="uPj-u0-XhN" userLabel="TemperatureRange" customClass="TemperatureRange"/>
+                <customObject id="uPj-u0-XhN" userLabel="TemperatureRange" customClass="TemperatureRange" customModule="UnitConverter"/>
             </objects>
-            <point key="canvasLocation" x="32.799999999999997" y="30.134932533733135"/>
+            <point key="canvasLocation" x="-299" y="45"/>
         </scene>
     </scenes>
 </document>
