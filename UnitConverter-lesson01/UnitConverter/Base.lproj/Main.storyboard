@@ -28,7 +28,7 @@
                                 </constraints>
                                 <connections>
                                     <outlet property="dataSource" destination="uPj-u0-XhN" id="XmZ-gn-fuq"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="rAq-mS-iVd"/>
+                                    <outlet property="delegate" destination="U5J-ae-XEW" id="NX2-Cf-it3"/>
                                 </connections>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oae-Ta-DQm">
@@ -50,12 +50,14 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="temperatureDelegate" destination="U5J-ae-XEW" id="vKv-Rz-pkL"/>
                         <outlet property="temperatureLabel" destination="Oae-Ta-DQm" id="cPy-gS-zIj"/>
                         <outlet property="temperatureRange" destination="uPj-u0-XhN" id="maN-fx-m0H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <customObject id="uPj-u0-XhN" userLabel="TemperatureRange" customClass="TemperatureRange" customModule="UnitConverter"/>
+                <customObject id="U5J-ae-XEW" userLabel="TemperatureDelegate" customClass="temperatureDelegate" customModule="UnitConverter" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="-299" y="45"/>
         </scene>
