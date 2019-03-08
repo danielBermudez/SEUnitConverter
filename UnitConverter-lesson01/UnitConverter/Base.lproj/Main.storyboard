@@ -37,6 +37,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6E5-sn-VV2">
+                                <rect key="frame" x="177" y="4" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -50,6 +55,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="celsiusPicker" destination="zfW-3F-mQk" id="Zc0-Oh-nRw"/>
                         <outlet property="temperatureLabel" destination="Oae-Ta-DQm" id="cPy-gS-zIj"/>
                         <outlet property="temperatureRange" destination="uPj-u0-XhN" id="maN-fx-m0H"/>
                     </connections>
