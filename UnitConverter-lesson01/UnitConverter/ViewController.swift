@@ -42,10 +42,21 @@ class ViewController: UIViewController, UIPickerViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let defaultPickerRow = celsiusPicker.numberOfRows(inComponent: 0)/2
-        celsiusPicker.selectRow(defaultPickerRow, inComponent: 0, animated: false)
-        pickerView(celsiusPicker, didSelectRow: defaultPickerRow, inComponent: 0)
+        let row = initialPickerRow()
+        celsiusPicker.selectRow(row, inComponent: 0, animated: false)
+        pickerView(celsiusPicker, didSelectRow: row, inComponent: 0)
     }
+    func initialPickerRow()-> Int{
+        // load from user defaults
+        //if we obtained a last-row index, return it
+        // otherwise, return th default
+        let savedRow = UserDefaults.standard.integer(forKey: userDefaultLastRowKey) as Int?
+        if let row = savedRow{
+            return row
+           
+        }else{
+        return celsiusPicker.numberOfRows(inComponent: 0)/2
+        }}
     
     
 
