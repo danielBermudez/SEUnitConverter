@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9MZ-yv-8fx">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Temperature-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="UnitConverter" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,11 +18,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zfW-3F-mQk">
-                                <rect key="frame" x="32" y="548" width="350" height="162"/>
+                                <rect key="frame" x="28" y="505.66666666666674" width="319" height="162"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="162" id="7dz-to-LRt"/>
                                 </constraints>
@@ -32,15 +32,17 @@
                                 </connections>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oae-Ta-DQm">
-                                <rect key="frame" x="173.5" y="425" width="67" height="46.5"/>
+                                <rect key="frame" x="154" y="382.66666666666669" width="67" height="46.666666666666686"/>
                                 <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="29"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6E5-sn-VV2">
-                                <rect key="frame" x="177" y="4" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GlA-Q5-MYF">
+                                <rect key="frame" x="143.66666666666666" y="717.66666666666663" width="88" height="30"/>
+                                <state key="normal" title="Switch Scale"/>
+                                <connections>
+                                    <action selector="switchScale:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ITd-q0-TCs"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -50,12 +52,15 @@
                                 <variation key="heightClass=compact" constant="20"/>
                             </constraint>
                             <constraint firstItem="Oae-Ta-DQm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BCf-4h-Crg"/>
+                            <constraint firstItem="GlA-Q5-MYF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="G8N-Qb-XQA"/>
                             <constraint firstItem="Oae-Ta-DQm" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="eHZ-vf-jBf"/>
+                            <constraint firstItem="GlA-Q5-MYF" firstAttribute="top" secondItem="zfW-3F-mQk" secondAttribute="bottom" constant="50" id="mk7-6l-KoC"/>
                             <constraint firstItem="zfW-3F-mQk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="12" id="u06-dD-g5t"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Temperature" id="w9o-5C-E71"/>
                     <connections>
-                        <outlet property="celsiusPicker" destination="zfW-3F-mQk" id="Zc0-Oh-nRw"/>
+                        <outlet property="degreePicker" destination="zfW-3F-mQk" id="Zc0-Oh-nRw"/>
                         <outlet property="temperatureLabel" destination="Oae-Ta-DQm" id="cPy-gS-zIj"/>
                         <outlet property="temperatureRange" destination="uPj-u0-XhN" id="maN-fx-m0H"/>
                     </connections>
@@ -63,7 +68,76 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <customObject id="uPj-u0-XhN" userLabel="TemperatureRange" customClass="TemperatureRange" customModule="UnitConverter"/>
             </objects>
-            <point key="canvasLocation" x="-299" y="45"/>
+            <point key="canvasLocation" x="717" y="-565"/>
+        </scene>
+        <!--Distance-->
+        <scene sceneID="p8C-29-Sti">
+            <objects>
+                <viewController id="zOh-DP-NZM" customClass="DistanceController" customModule="UnitConverter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dyZ-wN-hso"/>
+                        <viewControllerLayoutGuide type="bottom" id="cV1-yf-jaT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="U6a-Ee-vAS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J7p-7g-xY1">
+                                <rect key="frame" x="27" y="430" width="321" height="162"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="162" id="tH9-cO-zu8"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="06K-Rf-CqG" id="Cdj-lg-9QF"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="z8s-5x-4GN"/>
+                                </connections>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rwC-p6-5NW">
+                                <rect key="frame" x="154" y="306" width="67" height="47"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="29"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="rwC-p6-5NW" firstAttribute="top" secondItem="dyZ-wN-hso" secondAttribute="bottom" constant="262" id="Adw-ro-IY6"/>
+                            <constraint firstItem="J7p-7g-xY1" firstAttribute="top" secondItem="rwC-p6-5NW" secondAttribute="bottom" constant="77" id="ROb-1l-f49"/>
+                            <constraint firstItem="J7p-7g-xY1" firstAttribute="leading" secondItem="U6a-Ee-vAS" secondAttribute="leadingMargin" constant="11" id="Yur-hq-TNI"/>
+                            <constraint firstItem="rwC-p6-5NW" firstAttribute="leading" secondItem="U6a-Ee-vAS" secondAttribute="leading" constant="154" id="eT7-ew-gUY"/>
+                            <constraint firstItem="J7p-7g-xY1" firstAttribute="centerX" secondItem="rwC-p6-5NW" secondAttribute="centerX" id="oFv-kV-Sba"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Distance" id="Eh7-P7-KBs"/>
+                    <connections>
+                        <outlet property="degreeRange" destination="06K-Rf-CqG" id="7Lk-6x-KD0"/>
+                        <outlet property="distanceLabel" destination="rwC-p6-5NW" id="pKc-DT-TVO"/>
+                        <outlet property="distancePciker" destination="J7p-7g-xY1" id="ogl-y4-EHI"/>
+                        <outlet property="distancePicker" destination="J7p-7g-xY1" id="27v-Xe-YpW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qFO-Ae-rQs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="06K-Rf-CqG" customClass="distanceRange" customModule="UnitConverter" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="2116" y="-485"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="e0u-rQ-Wa6">
+            <objects>
+                <tabBarController id="9MZ-yv-8fx" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aVH-RC-Gi0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="5UR-ql-uga"/>
+                        <segue destination="zOh-DP-NZM" kind="relationship" relationship="viewControllers" id="8tt-YG-8Mi"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IWZ-EX-Aod" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-126" y="-368"/>
         </scene>
     </scenes>
 </document>
