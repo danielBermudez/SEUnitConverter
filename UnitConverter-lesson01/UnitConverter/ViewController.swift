@@ -17,8 +17,18 @@ class ViewController: UIViewController, UIPickerViewDelegate {
     @IBOutlet var temperatureRange: TemperatureRange!
     
     
+    @IBOutlet weak var upperLimit: UITextField!
     
+    @IBOutlet weak var lowerLimit: UITextField!
     
+    @IBAction func UdateRanges(_ sender: Any) {
+        if let lowerLimit = lowerLimit.text{
+            if let upperLimit = upperLimit.text{
+                temperatureRange.updateRange(lowerLimit: Int(lowerLimit)!, upperLimit: Int(upperLimit)!)
+//             temperatureRange.pickerView(celsiusPicker, numberOfRowsInComponent: temperatureRange.values.count)
+                celsiusPicker.reloadAllComponents()
+            }}
+    }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         let celsiusValue = temperatureRange.values[row]
         
@@ -42,11 +52,13 @@ class ViewController: UIViewController, UIPickerViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        setDefaultRow()
+    }
+    func setDefaultRow(){
         let defaultPickerRow = celsiusPicker.numberOfRows(inComponent: 0)/2
         celsiusPicker.selectRow(defaultPickerRow, inComponent: 0, animated: false)
         pickerView(celsiusPicker, didSelectRow: defaultPickerRow, inComponent: 0)
     }
-    
     
 
     override func didReceiveMemoryWarning() {
