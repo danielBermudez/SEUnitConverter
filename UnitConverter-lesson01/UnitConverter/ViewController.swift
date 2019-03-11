@@ -13,7 +13,7 @@ class ViewController: UIViewController, UIPickerViewDelegate {
     
     @IBOutlet weak var celsiusPicker: UIPickerView!
     private let converter = UnitConverter()
-    
+    let userDefaultLastRowKey = "defaultCelsiusPickerRow"
     @IBOutlet var temperatureRange: TemperatureRange!
     
     
@@ -26,11 +26,19 @@ class ViewController: UIViewController, UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         // convert and display temperature
+      displayConvertedTemperatureForRow(row: row)
+        saveSelectedRow(row: row)
+      
+    }
+    func displayConvertedTemperatureForRow(row : Int){
         let degreeCelsius = temperatureRange.values[row]
-        
         temperatureLabel.text = "\(converter.degreesFarenheit(degreesCelsius: degreeCelsius))°F"
     }
-  
+    func saveSelectedRow(row : Int){
+        let defaults = UserDefaults.standard
+        defaults.set(row, forKey: userDefaultLastRowKey )
+        defaults.synchronize()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -38,6 +46,7 @@ class ViewController: UIViewController, UIPickerViewDelegate {
         celsiusPicker.selectRow(defaultPickerRow, inComponent: 0, animated: false)
         pickerView(celsiusPicker, didSelectRow: defaultPickerRow, inComponent: 0)
     }
+    
     
 
     override func didReceiveMemoryWarning() {
