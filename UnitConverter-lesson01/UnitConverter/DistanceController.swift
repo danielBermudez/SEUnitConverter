@@ -15,7 +15,7 @@ class DistanceController : UIViewController, UIPickerViewDelegate{
     @IBOutlet var distanceRange: DistanceRange!
     
     private let converter = UnitConverter()
-    let userDefaultLastRowKey = "defaultPickerRow"
+    let userDefaultLastRowKey = "defaultDistancePickerRow"
   
     private var toMiles = true
     @IBOutlet weak var distancePciker: UIPickerView!
@@ -28,12 +28,7 @@ class DistanceController : UIViewController, UIPickerViewDelegate{
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         let distanceValue = distanceRange.values[row]
-        
-        
-        
-        
-        
-        return      "\(distanceValue) \(converter.distanceSymbolSwitch(miles: toMiles))" }
+        return "\(distanceValue) \(converter.distanceSymbolSwitch(miles: !toMiles))" }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         // convert and display temperature
@@ -42,15 +37,16 @@ class DistanceController : UIViewController, UIPickerViewDelegate{
         
     }
     func displayConvertedDistanceForRow(row : Int){
-        let degree = distanceRange.values[row]
-        let colorManager = ColorManager()
+        let distance = distanceRange.values[row]
+       
         if toMiles{
-            temperatureLabel.text = "\(converter.degreesFarenheit(degreesCelsius: degree)) \(converter.scaleSymbolSwitch(Fahrenheit: toFahrenheit))"
+            
+           distanceLabel.text = "\(converter.toMiles(distance: distance)) \(converter.distanceSymbolSwitch(miles: toMiles))"
         }else{
-            temperatureLabel.text = "\(converter.degreesCelsius(degreeFahrenheit: degree)) \(converter.scaleSymbolSwitch(Fahrenheit: toFahrenheit))"
+           distanceLabel.text = "\(converter.toKilometers(distance: distance)) \(converter.distanceSymbolSwitch(miles: toMiles))"
             
         }
-        temperatureLabel.textColor = colorManager.setColor(degree: degree)
+        
     }
     func saveSelectedRow(row : Int){
         let defaults = UserDefaults.standard

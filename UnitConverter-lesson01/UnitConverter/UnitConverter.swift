@@ -15,6 +15,13 @@ class UnitConverter {
     func degreesCelsius(degreeFahrenheit : Int)-> Int{
        return Int ((Float(degreeFahrenheit)-32) * (5 / 9 ))
     }
+    func toMiles(distance : Int)-> Int{
+       
+        return Int(Float(distance) * 0.62)
+    }
+    func toKilometers(distance : Int)-> Int{
+        return Int(Float(distance) * 1.609)
+    }
     func temperatureSymbolSwitch(Fahrenheit: Bool)-> String{
         if Fahrenheit{
             return "°F"
@@ -24,7 +31,7 @@ class UnitConverter {
     }
     func distanceSymbolSwitch(miles: Bool)-> String{
         if miles{
-            return "M"
+            return "Mi"
         }else {
             return "KM"
         }
